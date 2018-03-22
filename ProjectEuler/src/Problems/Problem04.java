@@ -24,7 +24,7 @@ public class Problem04 {
             }
         }
 
-        System.out.println("The biggest palindrome is: [" + result + "], and the 3-digit numbers are: [" + k + ", " + l + "]");
+        System.out.println("The biggest palindrome is: [" + result + "], and the two 3-digit numbers are: [" + k + ", " + l + "]");
 
     }
 
