@@ -3,6 +3,8 @@ package Problems;
 class Problem07 {
 
     public static void main(String[] args) {
+        /* What is the 10 001st prime number? */
+        
         int i = 1;
         int prime_number = 1;
         while (true) {
