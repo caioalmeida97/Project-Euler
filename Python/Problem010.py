@@ -6,7 +6,7 @@ def primeNumbers(limit):
     num = 3;
     while num < limit:
         prime = True;
-        print(num);
+        # print(num);
         for i in range(3, int(math.sqrt(num)) + 1, 2):
             if num % i == 0:
                 prime = False;
