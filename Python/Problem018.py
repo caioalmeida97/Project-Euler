@@ -11,7 +11,8 @@ def nextElement(element):
     auxI, auxJ = element.i, element.j;
     opt = options(auxI, auxJ);
     opt2 = [getElement(opt[0][0], opt[0][1]), getElement(opt[1][0], opt[1][1])];
-    return max(opt2[0].value, opt2[1].value);
+    return opt2[0] if opt2[0].value > opt2[1].value else opt2[1];
+    # max(opt2[0].value, opt2[1].value);
     # options(i, j)[0][0] -> pos i of the first option
     # options(i, j)[0][1] -> pos j of the first option
     # options(i, j)[1][0] -> pos i of the second option
@@ -44,8 +45,8 @@ string = '''
 
 for line in string.splitlines():
     triangle.append([int(number) for number in line.split()]);
-elements = [];
 
+elements = [];
 for row in range(len(triangle) - 1):
     for column in range(len(triangle[row])):
         elements.append(Element(row, column, triangle[row][column]))
@@ -59,5 +60,5 @@ for row in range(len(triangle) - 1):
 # for i, j in enumerate(triangle[14]):
 #     print(i, j)
 # opt = options(0, 0);
-# print(nextElement(elements[0]));
-print(nextElement(nextElement(elements[0])))
+# print(nextElement(elements[0]));h
+print(nextElement(nextElement(elements[0])).value)
