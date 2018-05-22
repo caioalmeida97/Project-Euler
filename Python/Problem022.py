@@ -27,36 +27,31 @@ letter_score = {
     'Z':26,
 }
 
-def name_score(name_s):
+def name_score(name_s): # Calculates the score of the name
     score = 0;
     for letter in name_s:
         score += letter_score[letter]
         # print(letter, letter_score[letter])
     return score;
 
-def split_names(names):
+def split_names(names): # Gets a string with all the names and splits them into an array
     ret = [];
     for name in names.split(','):
         ret.append(name.strip("\""));
     return ret;
 
-def calculate_score(names_file):
+def calculate_score(names_file): # Calculates the final score, based on the problem's context (name score * index of the name)
     names_list = split_names(names_file)
     names_list.sort();
     scores = [];
     final_score = 0;
     for element in names_list:
         score = name_score(element);
-        final_score = score * (names_list.index(element) + 1);
+        final_score = score * (names_list.index(element) + 1); # +1 because the vector indexes are from 0 to size-1
         scores.append(final_score);
         print(element, score, final_score);
     return scores;
 
+# Look at the file to understand this program better.
 file = open("p022_names.txt", "r").read();
 print(sum(calculate_score(file)));
-# ;
-# calculate_score(names);
-# names2 = "\"CAIO\",\"ANDRE\",\"DOBERMANN\",\"BREAO\"";
-# names3 = split_names(names2);
-# calculate_score(names3);
-# print(names)
