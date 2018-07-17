@@ -8,16 +8,16 @@ def divisors(n):
     return div;
 
 def classify(n):
-    div_sum = sum(divisors(n));
-    if div_sum < n:
+    divSum = sum(divisors(n));
+    if divSum < n:
         return -1; # Deficient number
-    elif div_sum == n:
+    elif divSum == n:
         return 0;  # Perfect number
-    elif div_sum > n:
+    elif divSum > n:
         return -1; # Abundant number
 
 limit = 28123; # All numbers above 28123 can be written by the sum of 2 abundant numbers
-abundant_nums = [];
+abundantNums = [];
 # for i in range(1, limit):
 #     if abundant(i):
 #         abundant_nums.append(i);
